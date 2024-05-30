@@ -33,6 +33,12 @@ client.on('interactionCreate', (interaction) => {
     if(interaction.commandName === 'ping'){
         interaction.reply('pong!');
      }
-})
+
+     if(interaction.commandName === 'add'){
+        const num1 = interaction.options.get('first-number')
+        const num2 = interaction.options.get('second-number')
+        interaction.reply(`${num1.value} + ${num2.value} = ${num1.value+num2.value}`);
+     }
+});
 
 client.login(process.env.TOKEN);
